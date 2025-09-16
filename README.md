@@ -12,7 +12,7 @@ The app demonstrates **core OOP concepts** and applies **SOLID principles** to k
   - Special instructions (e.g., “extra mint, ya rais”)  
 - Edit existing orders (change name, drink, or notes).  
 - Mark orders as completed ✅.  
-- View pending orders (still not served).  
+- View pending orders.  
 - View all orders (completed + pending).  
 - Generate reports:  
   - Total number of orders  
