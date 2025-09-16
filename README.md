@@ -87,8 +87,12 @@ dart run lib/main.dart
 
 ## 🖼 Screenshots
 - Dashboard (Menu)  
+![Menu Screenshot](screenshots/DashboardMenu.png)  
+
 - Pending Orders  
+![Pending Orders](screenshots/pendingOrders.png)  
 - Reports  
+![Pending Orders](screenshots/reports.png)  
 
 ---
 
