@@ -1,66 +1,55 @@
-Smart Ahwa Manager App ☕
+# Smart Ahwa Manager App ☕
 
-A simple console-based Dart app to help a coffee shop (ahwa) owner in Cairo manage daily operations.
-The app demonstrates core OOP concepts and applies SOLID principles to keep the code modular, extendable, and easy to maintain.
+A simple **console-based Dart app** to help a coffee shop (*ahwa*) owner in Cairo manage daily operations.  
+The app demonstrates **core OOP concepts** and applies **SOLID principles** to keep the code modular, extendable, and easy to maintain.  
 
-📌 Features
+---
 
-Add new orders with:
+## 📌 Features
+- Add new orders with:
+  - Customer name  
+  - Drink type (Shai, Turkish Coffee, Hibiscus Tea)  
+  - Special instructions (e.g., “extra mint, ya rais”)  
+- Edit existing orders (change name, drink, or notes).  
+- Mark orders as completed ✅.  
+- View pending orders (still not served).  
+- View all orders (completed + pending).  
+- Generate reports:  
+  - Total number of orders  
+  - Top-selling drinks  
 
-Customer name
+---
 
-Drink type (Shai, Turkish Coffee, Hibiscus Tea)
+## 🏛 OOP Concepts in Action
+- **Encapsulation:**  
+  Order fields are private with getters/setters and update methods, so the state is always controlled.  
 
-Special instructions (e.g., “extra mint, ya rais”)
+- **Inheritance & Polymorphism:**  
+  Drinks (`Shai`, `TurkishCoffee`, `HibiscusTea`) inherit from an abstract `Drink` class.  
 
-Edit existing orders (change name, drink, or notes).
+- **Abstraction:**  
+  `Report` and `OrderRepository` are abstract classes/interfaces. Different implementations can extend or implement them.  
 
-Mark orders as completed ✅.
+---
 
-View pending orders (still not served).
+## 🧩 SOLID Principles Applied
+- **SRP (Single Responsibility Principle):**  
+  - `Order` only stores order data.  
+  - `OrderManager` handles order operations.  
+  - `Report` classes handle reporting logic.  
 
-View all orders (completed + pending).
+- **OCP (Open-Closed Principle):**  
+  - Add new drinks by creating a new subclass of `Drink`.  
+  - Add new reports (e.g., daily revenue) by creating a new `Report` class without touching old code.  
 
-Generate reports:
+- **DIP (Dependency Inversion Principle):**  
+  - `OrderManager` depends on the abstraction `OrderRepository`.  
+  - Current implementation uses `InMemoryOrderRepository`, but can be swapped with a database or Firestore later.  
 
-Total number of orders
+---
 
-Top-selling drinks
-
-🏛 OOP Concepts in Action
-
-Encapsulation:
-Order fields are private with getters/setters and update methods, so the state is always controlled.
-
-Inheritance & Polymorphism:
-Drinks (Shai, TurkishCoffee, HibiscusTea) inherit from an abstract Drink class.
-
-Abstraction:
-Report and OrderRepository are abstract classes/interfaces. Different implementations can extend or implement them.
-
-🧩 SOLID Principles Applied
-
-SRP (Single Responsibility Principle):
-
-Order only stores order data.
-
-OrderManager handles order operations.
-
-Report classes handle reporting logic.
-
-OCP (Open-Closed Principle):
-
-Add new drinks by creating a new subclass of Drink.
-
-Add new reports (e.g., daily revenue) by creating a new Report class without touching old code.
-
-DIP (Dependency Inversion Principle):
-
-OrderManager depends on the abstraction OrderRepository.
-
-Current implementation uses InMemoryOrderRepository, but can be swapped with a database or Firestore later.
-
-📂 Project Structure
+## 📂 Project Structure
+```
 lib/
  ├─ main.dart                   # Entry point with interactive console menu
  ├─ models/
@@ -71,34 +60,38 @@ lib/
  │       ├─ turkish_coffee.dart
  │       └─ hibiscus_tea.dart
  ├─ services/
-   ├─ order_manager.dart       # Handles order logic
-   ├─ order_repo.dart          # Repository abstraction + in-memory implementation
-   └─ reports/
-       ├─ report.dart          # Report abstraction
-       ├─ total_orders_report.dart
-       └─ top_selling_report.dart
+ │   ├─ order_manager.dart       # Handles order logic
+ │   ├─ order_repo.dart          # Repository abstraction + in-memory implementation
+ │   └─ reports/
+ │       ├─ report.dart          # Report abstraction
+ │       ├─ total_orders_report.dart
+ │       └─ top_selling_report.dart
+ └─ screenshots/                 # Screenshots for documentation
+```
 
+---
 
-🚀 How to Run
-
+## 🚀 How to Run
 Clone the repo:
-
+```bash
 git clone https://github.com/your-username/smart_ahwa_manager.git
 cd smart_ahwa_manager
-
+```
 
 Run the project:
-
+```bash
 dart run lib/main.dart
+```
 
-🖼 Screenshots
-Dashboard (Menu)
+---
 
-Pending Orders
+## 🖼 Screenshots
+- Dashboard (Menu)  
+- Pending Orders  
+- Reports  
 
-Reports
+---
 
-📝 Notes
-
-This project was built as part of the Week 1 OOP & SOLID Assignment.
-It shows how applying OOP and SOLID principles makes software scalable, testable, and easy to maintain.
+## 📝 Notes
+This project was built as part of the **Week 1 OOP & SOLID Assignment**.  
+It shows how applying OOP and SOLID principles makes software **scalable, testable, and easy to maintain**.  
